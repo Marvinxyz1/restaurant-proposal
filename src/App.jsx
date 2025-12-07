@@ -5,6 +5,9 @@ import {
   Clock, MapPin, Phone, Instagram, ArrowRight, Shield, Zap,
   Layout, Search, Globe, Mail, CreditCard, Users, Server, BarChart
 } from 'lucide-react';
+import cofoScreenshot from './assets/cofo-screenshot.png';
+import tokyoCinemaScreenshot from './assets/tokyo-cinema-screenshot.png';
+import salesAiScreenshot from './assets/sales-ai-screenshot.jpg';
 
 // --- Assets & Constants ---
 const THEME = {
@@ -185,6 +188,7 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
+            {/* COFO Project */}
             <a
               href="https://cofo.jp/"
               target="_blank"
@@ -206,6 +210,48 @@ const Portfolio = () => {
               <span>#Motion Design</span>
               <span>#JP/EN Web Design</span>
             </div>
+
+            {/* Tokyo Art Cinema Project */}
+            <div className="mt-8 pt-8 border-t border-gray-800">
+              <div className="block">
+                <h3 className="text-2xl font-bold border-l-4 pl-4" style={{ borderColor: THEME.accent }}>
+                  Tokyo Art Cinema
+                </h3>
+                <span className="ml-4 text-sm opacity-60 font-eng">Personal Project</span>
+              </div>
+              <p className="leading-relaxed opacity-80 mt-4">
+                東京のミニシアター・アートハウス映画館の上映スケジュールを一括検索できるiOSアプリ。
+                SwiftUI + MVVM アーキテクチャで開発。映画詳細情報、上映館検索、スケジュール管理機能を実装。
+                美しいUIデザインと直感的なユーザー体験を重視した個人プロジェクトです。
+              </p>
+              <div className="flex flex-wrap gap-4 text-sm font-eng opacity-60 mt-4">
+                <span>#SwiftUI</span>
+                <span>#iOS App</span>
+                <span>#MVVM</span>
+                <span>#UI/UX Design</span>
+              </div>
+            </div>
+
+            {/* Sales AI Assistant Project */}
+            <div className="mt-8 pt-8 border-t border-gray-800">
+              <div className="block">
+                <h3 className="text-2xl font-bold border-l-4 pl-4" style={{ borderColor: THEME.accent }}>
+                  営業支援AIアシスタント
+                </h3>
+                <span className="ml-4 text-sm opacity-60 font-eng">Corporate Project（実画面非公開）</span>
+              </div>
+              <p className="leading-relaxed opacity-80 mt-4">
+                営業担当者の商談をリアルタイムでサポートするAIアシスタント。
+                顧客との会話を自動で音声認識し、重要情報をカード形式で抽出・整理。
+                会議記録の自動生成、リアルタイムの提案サジェスト機能により、成約率向上を支援。
+              </p>
+              <div className="flex flex-wrap gap-4 text-sm font-eng opacity-60 mt-4">
+                <span>#Speech Recognition</span>
+                <span>#AI/LLM</span>
+                <span>#Real-time Processing</span>
+                <span>#Sales Enablement</span>
+              </div>
+            </div>
           </motion.div>
 
           {/* Device Mockups */}
@@ -222,32 +268,29 @@ const Portfolio = () => {
                  <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
                </div>
-               <div className="p-4 bg-[#0f0f0f] h-full relative">
-                  <div className="w-full h-32 bg-gray-800/50 mb-2 rounded"></div>
-                  <div className="flex gap-2">
-                    <div className="w-1/3 h-20 bg-gray-800/50 rounded"></div>
-                    <div className="w-1/3 h-20 bg-gray-800/50 rounded"></div>
-                    <div className="w-1/3 h-20 bg-gray-800/50 rounded"></div>
-                  </div>
-               </div>
+               <img
+                 src={cofoScreenshot}
+                 alt="COFO Website Screenshot"
+                 className="w-full h-[calc(100%-16px)] object-cover object-top"
+               />
             </div>
             
             {/* Tablet Mockup */}
             <div className="absolute bottom-10 left-10 w-1/2 h-64 bg-[#1a1a1a] rounded-lg border border-gray-700 shadow-2xl z-20 overflow-hidden transform -rotate-2">
-               <div className="p-2 bg-[#0f0f0f] h-full">
-                  <div className="w-full h-8 bg-gray-800/50 mb-2 rounded"></div>
-                  <div className="space-y-2">
-                     {[1,2,3,4].map(i => <div key={i} className="w-full h-8 bg-gray-800/30 border-b border-gray-700 flex items-center px-2 text-[8px] text-gray-500">Menu Item</div>)}
-                  </div>
-               </div>
+               <img
+                 src={salesAiScreenshot}
+                 alt="Sales AI Assistant Screenshot"
+                 className="w-full h-full object-cover"
+               />
             </div>
 
             {/* Mobile Mockup */}
             <div className="absolute bottom-0 right-20 w-24 h-48 bg-[#1a1a1a] rounded-2xl border-4 border-gray-800 shadow-2xl z-30 overflow-hidden">
-              <div className="w-full h-full bg-[#0f0f0f] p-2 flex flex-col justify-between">
-                <div className="w-full h-20 bg-gray-800/50 rounded-lg"></div>
-                <div className="w-full h-8 bg-[color:var(--accent)] rounded flex items-center justify-center text-[8px] text-black font-bold" style={{ backgroundColor: THEME.accent }}>予約する</div>
-              </div>
+              <img
+                src={tokyoCinemaScreenshot}
+                alt="Tokyo Art Cinema App Screenshot"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </motion.div>
         </div>
